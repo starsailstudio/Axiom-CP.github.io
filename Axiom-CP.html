@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.3">
+    <title>Axiom-CP 原创作品许可协议</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --border-color: #e1e4e8;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-bg);
+        }
+        
+        .protocol-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .protocol-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: 1;
+        }
+        
+        .protocol-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .axiom-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .axiom-logo-inner {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+        }
+        
+        .axiom-logo-inner::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.1);
+            opacity: 0.3;
+        }
+        
+        .protocol-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .protocol-subtitle {
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .protocol-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .protocol-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chapter-title {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .chapter-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 8px;
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .definition-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .definition-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .definition-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: "!";
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .nav-pills .nav-link:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .protocol-footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background-color: var(--secondary-color);
+        }
+        
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 2;
+        }
+        
+        .community-notice {
+            background: linear-gradient(135deg, #e8f4fc, #d1ecf1);
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .community-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .community-content h5 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .community-content p {
+            margin-bottom: 0;
+            color: #555;
+        }
+        
+        .side-info {
+            background: #e8f4fc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .side-info h6 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .side-info p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .protocol-container {
+                padding: 1rem;
+            }
+            
+            .protocol-header {
+                padding: 2rem 0;
+            }
+            
+            .protocol-title-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .axiom-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .community-notice {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .community-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+    </a>
+
+    <!-- 页面头部 -->
+    <header class="protocol-header">
+        <div class="floating-badge">版本 1.3</div>
+        <div class="container">
+            <div class="protocol-title-container">
+                <div class="axiom-logo">
+                    <div class="axiom-logo-inner">ax</div>
+                </div>
+                <div>
+                    <h1 class="protocol-title">Axiom-CP 原创作品许可协议</h1>
+                    <p class="protocol-subtitle">Axiom-Creator Protection</p>
+                    <p class="mb-0">2025年11月1日生效</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <!-- 侧边导航 -->
+            <div class="col-lg-3 mb-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <div class="protocol-container">
+                        <h5 class="mb-3">协议导航</h5>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#preface">序言</a>
+                            <a class="nav-link" href="#chapter1">第一章：定义</a>
+                            <a class="nav-link" href="#chapter2">第二章：权利保留与核心规范</a>
+                            <a class="nav-link" href="#chapter3">第三章：您的权利与合理空间</a>
+                            <a class="nav-link" href="#chapter4">第四章：其他重要条款</a>
+                        </nav>
+                    </div>
+                    
+                    <div class="protocol-container mt-3">
+                        <div class="side-info">
+                            <h6>社区所有</h6>
+                            <p>本协议由创作者社区共同维护，任何创作者都可以免费使用。</p>
+                        </div>
+                        
+                        <div class="side-info">
+                            <h6>如何使用</h6>
+                            <p>在您的作品中声明使用Axiom-CP协议即可自动获得保护。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 协议内容 -->
+            <div class="col-lg-9">
+                <div class="protocol-container">
+                    <!-- 社区所有权通知 -->
+                    <div class="community-notice">
+                        <div class="community-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.811 3 8 3c-.81 0-2.254 1.176-3.568 2.638C3.122 7.096 2 8.345 2 10a6 6 0 0 0 6 6z"/>
+                                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
+                        <div class="community-content">
+                            <h5>社区所有的开放协议</h5>
+                            <p>本协议由创作者社区共同维护，任何创作者都可以免费使用此协议保护自己的原创作品。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 序言 -->
+                    <section id="preface">
+                        <h2 class="chapter-title">序言</h2>
+                        <p>本《Axiom-CP原创作品许可协议》（以下简称"本协议"）是一份为保护原创者权利而设计的公共许可协议。一旦您通过任何方式阅读、访问或以其他形式接触了明示采用本协议的作品（定义见下文），即视为您已理解并自动接受本协议所有条款的约束。本协议旨在为创作者提供一个清晰、确定的权利保护框架，让创作者能更安心地进行创作。</p>
+                        
+                        <div class="highlight-box">
+                            <p class="mb-0">本协议文本本身作为一份独立的智力成果，其著作权由创作者社区共同所有。任何个人或组织可以在遵守本协议宗旨的前提下，自由地使用、引用本协议文本，但不得对本协议文本进行复制、修改、分发以用于直接或间接的盈利性活动，亦不得对协议文本进行歪曲、篡改或进行与原协议宗旨相悖的利用。</p>
+                        </div>
+                    </section>
+
+                    <!-- 第一章：定义 -->
+                    <section id="chapter1" class="mt-5">
+                        <h2 class="chapter-title">第一章：定义</h2>
+                        <p>为确保本协议的准确执行，避免歧义，兹对关键术语定义如下：</p>
+                        
+                        <ul class="definition-list">
+                            <li>
+                                <strong>"作品"</strong>：指受《中华人民共和国著作权法》及国际著作权公约保护的，由创作者创作的独创性智力成果。其表现形式包括但不限于：
+                                <ul>
+                                    <li>文字作品：文章、随笔、散文、小说、诗歌、剧本、学术论文、技术文档、博客帖子、评论集、问答记录等。</li>
+                                    <li>数字化内容：与文字作品配套的，由作者亲自创作或设计的图像、插图、图表、流程图、思维导图、代码片段、音频解说、视频演示等。</li>
+                                    <li>复合型内容：由上述形式组合而成的电子书、专题专栏、在线课程大纲等。</li>
+                                    <li>本协议所保护之"作品"，其载体通常为数字形式，存在于互联网站点、应用程序或任何其他电子媒介中。</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <strong>"创作者"或"许可人"</strong>：指创作并发布受本协议保护之"作品"的自然人、法人或非法人组织。本协议下的一切权利均源于创作者。
+                            </li>
+                            
+                            <li>
+                                <strong>"搬运"</strong>：指对原作品进行任何形式的复制、抓取、存储、上传、转载或分发等行为。其具体形式包括但不限于：
+                                <ul>
+                                    <li>将作品全文或实质性部分复制到其他网站、论坛、博客、社交媒体平台、应用程序等。</li>
+                                    <li>通过爬虫、RSS订阅采集或其他自动化工具获取并存储作品内容。</li>
+                                    <li>将作品制作成PDF、EPUB等文件并进行分发。</li>
+                                </ul>
+                                <div class="mt-2">
+                                    <strong>例外情况</strong>：使用者独立创作的新作品，仅为评论、研究或说明问题之目的，合理引用原作品的片段（引用量必须控制在《中华人民共和国著作权法》规定的"为介绍、评论某一作品或者说明某一问题，在作品中适当引用他人已经发表的作品"的范围内，且必须明确标注出处），不构成"搬运"。此行为受法律规定的"合理使用"制度保护，不属于本协议禁止之列。
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <strong>"抄袭"</strong>：指在未经许可且未予恰当署名的情况下，将他人的作品或作品的实质性部分，冒充为自己创作的作品公之于众的行为。认定"抄袭"的核心标准在于"内容的实质性相似"与"署名的虚假性"，具体表现为：
+                                <ul>
+                                    <li>连续超过十五个汉字与原作品完全一致，或虽有个别词汇调整但句子结构、核心表达完全一致。</li>
+                                    <li>段落主旨、论证逻辑、情节发展、数据罗列顺序等与原作品高度相似，且这种相似性超出了基于同一事实进行独立创作的合理巧合范围。</li>
+                                    <li>对原作品进行"同义替换"、"语序调整"等伪装手段，但其核心思想、结构与表达仍与原作品无异。</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <strong>"盈利"</strong>：指任何以获取经济利益或商业价值为目的的行为，包括直接盈利与间接盈利。
+                                <ul>
+                                    <li>直接盈利：对访问作品收费、设置付费墙、出售包含作品的合集、通过作品展示广告并获得收益等。</li>
+                                    <li>间接盈利：虽不直接对作品收费，但利用作品的流量为网站、公众号、应用程序等吸引用户，从而提升平台估值、吸引投资、推广其他付费产品或服务，或增加个人声誉以换取未来商业机会等。</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <strong>"演绎作品"</strong>：指基于本作品，或基于本作品与其他已存在的作品而创作的作品，例如翻译、改编、编排、改写或其他需要获得创作者许可的修改形式。
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- 第二章：权利保留与核心规范 -->
+                    <section id="chapter2" class="mt-5">
+                        <h2 class="chapter-title">第二章：权利保留与核心规范</h2>
+                        
+                        <h4 class="section-title">第一条 永久性内容禁运原则</h4>
+                        <p>即使承载原作品的互联网站点、应用程序或因任何原因（包括但不限于服务器关闭、域名过期、运营方终止服务）而永久性地无法访问，本协议对作品的保护效力依然存续，绝不因此而终止或削弱。禁止任何个人或组织利用原站点失效的时机，对作品进行随意、故意或肆意的搬运。</p>
+                        
+                        <h4 class="section-title">第二条 事前同意与默示禁止原则</h4>
+                        <p>在任何涉及对作品进行"搬运"等复制或分发行为之前，行为人必须主动联系创作者并获得其明确的、书面的同意。同意的方式包括但不限于：创作者在作品页面的明确声明、创作者在社交媒体平台的公开授权、或创作者通过电子邮件等可追溯的书面形式给予的直接授权。</p>
+                        
+                        <div class="highlight-box">
+                            <p class="mb-0">"默示禁止"规则：如果您向创作者发出授权请求，而创作者未在十五个工作日内予以回复，或创作者的回复为"不同意"、"暂不授权"或任何其他非明确肯定的表述，则一律视为创作者未同意。在此情况下，任何搬运行为均构成侵权。</p>
+                        </div>
+                        
+                        <h4 class="section-title">第三条 非商业化禁令</h4>
+                        <p>在未经创作者明确允许的情况下，严格禁止任何以"盈利"为目的的分发、传播或利用作品的行为。</p>
+                        
+                        <h4 class="section-title">第四条 不可撤销的归属权条款</h4>
+                        <p>在获得创作者授权进行搬运的情况下，您必须履行以下不可推卸的归属义务：</p>
+                        <ol>
+                            <li><strong>显著标注</strong>：在作品正文开始前或结束后等显著位置，以清晰可读的方式注明创作者名称（或笔名）以及原始发布地址（URL）。</li>
+                            <li><strong>链接永恒性</strong>：标注的原文章地址必须是可访问的有效链接。如果原地址因站点倒闭等原因失效，搬运者不得随意删除或更换该链接。取而代之的是，应在原链接旁注明"原链接已失效，转载已获授权"等字样。仅在创作者明确书面同意的情况下，方可免除此项义务。</li>
+                            <li><strong>禁止篡改</strong>：搬运时必须保持作品内容的完整性，不得对原文进行任何扭曲、篡改或断章取义。</li>
+                        </ol>
+                        
+                        <h4 class="section-title">第五条 演绎作品的限制</h4>
+                        <p>禁止在未经创作者明确许可的情况下，对作品进行改编、翻译、编曲或创作任何其他形式的演绎作品。任何基于本作品的演绎作品的发布与传播，必须事先获得创作者的单独授权。</p>
+                    </section>
+
+                    <!-- 第三章：您的权利与合理空间 -->
+                    <section id="chapter3" class="mt-5">
+                        <h2 class="chapter-title">第三章：您的权利与合理空间</h2>
+                        
+                        <h4 class="section-title">第六条 合理使用与评论自由</h4>
+                        <p>本协议充分尊重并保障公众在法律框架内的评论与批评自由。本协议允许任何人在正当情况下，对作品进行以下正常行为，这些行为不视为侵权：</p>
+                        
+                        <ul class="definition-list">
+                            <li><strong>评论与批评</strong>：对作品的观点、论据、文笔或事实进行评价、讨论甚至批评。</li>
+                            <li><strong>引用</strong>：为撰写文章、进行学术研究或参与辩论，在不构成对原作品实质性替代的前提下，适当引用作品的片段。</li>
+                            <li><strong>私人使用</strong>：将作品下载至个人设备，供个人离线阅读、学习或欣赏。</li>
+                        </ul>
+                    </section>
+
+                    <!-- 第四章：其他重要条款 -->
+                    <section id="chapter4" class="mt-5">
+                        <h2 class="chapter-title">第四章：其他重要条款</h2>
+                        
+                        <h4 class="section-title">第七条 技术保护措施的合规性</h4>
+                        <p>严禁任何个人或组织绕过、破坏或规避创作者或发布平台为保护作品而采取的任何技术措施（如反爬虫机制、复制限制、水印技术等）。</p>
+                        
+                        <h4 class="section-title">第八条 协议期限与终止</h4>
+                        <ol>
+                            <li>本协议自您接触作品之日起生效，直至作品著作权保护期届满。</li>
+                            <li>如果您违反本协议的任何条款，本协议授予您的权利将自动终止。但终止前已依据本协议合法获得作品的使用者，其权利不受影响。</li>
+                        </ol>
+                        
+                        <h4 class="section-title">第九条 免责声明</h4>
+                        <p>在适用法律所允许的最大范围内，创作者按"现状"提供作品，不对作品作任何明示或暗示的担保，包括但不限于对作品不侵犯第三方权利、其适销性和特定用途适用性的担保。您应自行承担使用作品的风险。</p>
+                        
+                        <h4 class="section-title">第十条 责任限制</h4>
+                        <p>除法律要求外，创作者不对您因使用或无法使用本作品而遭受的任何直接或间接损失承担责任。</p>
+                        
+                        <h4 class="section-title">第十一条 争议解决</h4>
+                        <p>因本协议引起或与本协议有关的任何争议，双方应首先尝试友好协商解决。若协商不成，任何一方均有权将争议提交至创作者所在地有管辖权的人民法院通过诉讼解决。</p>
+                        
+                        <h4 class="section-title">第十二条 其他</h4>
+                        <ol>
+                            <li><strong>可分性</strong>：如果本协议的任何条款被有管辖权的法院认定为无效或不可执行，则该条款应在最低必要程度上被修改以使其可执行，且不影响本协议其余条款的持续有效性和执行力。</li>
+                            <li><strong>最终解释权</strong>：本协议的最终解释权归创作者社区所有。社区有权通过公开、透明的方式对协议条款的含义及其适用提供权威性的解释。</li>
+                            <li><strong>协议使用</strong>：任何创作者都可以在自己的作品中使用本协议，只需在作品显著位置标明"本作品采用Axiom-CP原创作品许可协议进行保护"并附上协议链接即可。</li>
+                        </ol>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="protocol-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-md-start">
+                    <p class="mb-1">© 2025 Axiom-CP 原创作品许可协议 | 版本 1.3</p>
+                    <p class="small mb-0">本协议由创作者社区共同维护</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-light">协议原文</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS 和 Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+    <!-- 自定义JS -->
+    <script>
+        // 返回顶部按钮功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 导航激活状态
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
